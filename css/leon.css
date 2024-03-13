@@ -1,0 +1,552 @@
+/* اي حاجة رجعها لل defult */
+
+/* start variables */
+
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+}
+
+/* end variables */
+
+
+/* start glouble rules */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width:1200px) {
+    .container {
+        width: 1180px;
+    }
+
+}
+
+/* end glouble rules */
+
+/* start components */
+
+.custom-head {
+    color: #42464a;
+    opacity: .3;
+    font-size: 100px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+    text-align: center;
+}
+
+.custom-head+p {
+    font-size: 20px;
+    margin: -30px 0px 0px;
+    color: #797979;
+    text-align: center;
+}
+
+@media (max-width:768px) {
+    .custom-head {
+        font-size: 60px;
+    }
+
+    .custom-head+p {
+        margin-top: -20px;
+    }
+
+}
+
+
+/* end components */
+
+
+/* start header */
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.header .logo {
+    width: 60px;
+}
+
+.links {
+    position: relative;
+
+}
+
+.header .links:hover .icon span:nth-child(2) {
+    width: 30px;
+}
+
+.header .links:hover ul {
+    display: block;
+}
+
+.header .container .links .icon {
+    /* وعرررررض  ركززززززز هنا لازم تدي لل اسباااان ديسبلاي*/
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header .container .links .icon span {
+    width: 30px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #333;
+    transition: .3s;
+}
+
+.header .links .icon span:nth-child(2) {
+    width: 15px;
+}
+
+.header .links:hover .icon span:nth-child(2) {
+    width: 30px;
+}
+
+.header .links ul {
+    /* اعااااااادة الليستة لل defult */
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 200px;
+    background-color: #f6f6f6;
+    display: none;
+    z-index: 1;
+}
+
+.header .links ul::after {
+    content: "";
+    border: 20px solid transparent;
+    border-bottom-color: #f6f6f6;
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+.header .container .links ul li:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+.header .links ul li a {
+    display: block;
+    text-decoration: none;
+    counter-reset: #333;
+    padding: 15px;
+    transition: .3s;
+    color: #333;
+}
+
+.header .links ul li a:hover {
+    padding-left: 25px;
+}
+
+/* end header */
+
+
+/* start landing */
+
+.landing {
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 54px);
+    position: relative;
+}
+
+.landing .intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 300px;
+    /* علشان لو المساحة قلت ما يطلعش برة الاب */
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.landing .intro-text h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--main-color);
+
+}
+
+.landing .intro-text p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* end landing */
+
+
+/* start features */
+
+.features {
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.features .feat {
+    text-align: center;
+    padding: 20px;
+}
+
+.features .feat i {
+    color: var(--main-color, #e333e3);
+}
+
+.features .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+}
+
+.features .feat p {
+    /* خط شفااااااااااف */
+    color: #777;
+    font-size: 17px;
+    /* الارتفاع الافضل */
+    line-height: 1.8;
+}
+
+
+/* end features */
+
+
+
+/* start services  */
+
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+
+.services-content .col {
+    margin-right: 20px;
+}
+
+.services-content .col .serv {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+@media (max-width:768px) {
+    .services-content .col .serv {
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:1200px) {
+    .images {
+        display: none;
+    }
+}
+
+.services-content .col .serv i {
+    color: var(--main-color);
+
+    /* علشان لما يترتبو اعمدة يبقي الطول 60 ولما يترتبو صفوف يبقي العرض 60 */
+    flex-basis: 60px;
+}
+
+.services-content .col .serv .text {
+    /* علشان ينكمش ويسمح لل ايقونة انها تاد العرض او الطول ال60 */
+    flex: 1;
+}
+
+.services-content .col .serv .text h3 {
+    margin: 0 0 20px;
+}
+
+.services-content .col .serv .text p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.services-content .images {
+    position: relative;
+    /* دي بدل ما اخلي ال بيفور. الرايت بتاعه -50px */
+    text-align: center;
+    z-index: 1;
+}
+
+
+.services-content .images::before {
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: -1;
+}
+
+.services-content .images img {
+    width: 260px;
+}
+
+/* end services  */
+
+/* start portofolio */
+
+.portofolio {
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.portofolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.portofolio-content .card {
+    background-color: white;
+}
+
+.portofolio-content .card img {
+    /* width: 100%; */
+    /* او */
+    max-width: 100%;
+    /* الاتنين معناهم ان الصورة ما تطلعش برة الاب */
+}
+
+.portofolio-content .card .info {
+    padding: 20px;
+}
+
+.portofolio-content .card .info h3 {
+    margin: 0px;
+}
+
+.portofolio-content .card .info p {
+    color: #777;
+    margin-bottom: 0px;
+    line-height: 1.6;
+}
+
+/* end portofolio */
+
+
+/* start about */
+
+.about {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.about-content {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.about-content .image {
+    position: relative;
+    width: 250px;
+    height: 370px;
+}
+
+@media (max-width:992px) {
+    .about-content .image {
+        margin: 0 auto;
+    }
+}
+
+.about-content .image img {
+    max-width: 100%;
+}
+
+.about-content .image::before {
+    content: "";
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+
+.about-content .image::after {
+    content: "";
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    position: absolute;
+    top: -40px;
+    right: -150px;
+    z-index: -1;
+}
+
+@media (max-width:992px) {
+
+    .about-content .image::before,
+    .about-content .image::after {
+        display: none;
+    }
+}
+
+.about-content .text {
+    width: 50%;
+}
+
+@media (max-width:992px) {
+    .about-content .text {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.about-content .text p:first-child {
+    line-height: 2;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.about-content .text hr {
+    width: 50%;
+    /* مهههمة جداااااااااا  
+    علشان يبداء من الاول لازم يبقي بلوك وف نفس الوقت ينفع ييجي جنبه عناصر */
+    display: inline-block;
+    /* برضوووووو مهمة */
+    border-color: var(--main-color);
+}
+
+.about-content .text p:first-child p:last-child {
+    line-height: 2;
+    color: #777;
+}
+
+/* end about */
+
+
+/* start contact */
+
+.contact {
+    background-color: var(--section-background);
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+
+}
+
+.contact-foot {
+    text-align: center;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.contact-foot>:first-child {
+    color: var(--secondary-color);
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.contact-foot>:nth-child(2)>a {
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.contact-foot>:last-child a:first-child {
+    color: red;
+}
+
+.contact-foot>:last-child a:last-child {
+    color: rgb(42, 186, 209);
+}
+
+@media (max-width:767px) {
+
+    .contact-foot>:first-child,
+    .contact-foot>:nth-child(2)>a {
+        font-size: 25px;
+    }
+}
+
+/* end contact */
+
+/* start copyright */
+
+.copyright {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.copyright span {
+    color: var(--main-color);
+}
+
+/* end copyright */
